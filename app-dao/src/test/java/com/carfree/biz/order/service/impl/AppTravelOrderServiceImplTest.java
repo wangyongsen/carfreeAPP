@@ -22,7 +22,7 @@ public class AppTravelOrderServiceImplTest extends BaseTest {
     @Test
     public void testGetTravelOrderList()  {
         List<TravelOrderEntity> travelOrderEntities =  travelOrderDao.testGetTravelOrderList();
-        System.out.println("result{"+ JSON.toJSONString(travelOrderEntities)+"}");
+        System.out.println("result:"+ JSON.toJSONString(travelOrderEntities));
     }
 
 
