@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.carfree.dao.TravelOrderDao">
+    <!-- 开启本mapper的namespace下的二级缓存，要合ehcache整合，需要配置type为ehcache实现cache接口的类型 -->
+    <!--<cache type="org.mybatis.caches.ehcache.EhcacheCache" />-->
+    <!-- 与上面不同，可以输出日志 -->
+    <!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
+
+    <!-- 全部结果 -->
+    <sql id="resultColumn">
+      tro_order_id              as orderId,
+      tro_order_code            as orderCode,
+      tro_car_id                as carId,
+      tro_user_id               as userId,
+      tro_accident_status       as accidentStatus,
+      tro_infringe_status       as infringeStatus,
+      tro_order_status          as status,
+      tro_reserve_time          as reserveTime,
+      tro_start_time            as startTime,
+      tro_end_time              as endTime,
+      tro_cancel_time           as cancelTime,
+      tro_pick_car_time         as pickCarTime,
+      tro_return_car_time       as returnCarTime,
+      tro_start_stat_id         as startStatId,
+      tro_end_stat_id           as endStatId,
+      tro_start_stat_name       as startStatName,
+      tro_end_stat_name         as endStatName,
+      tro_service_time          as serviceTime,
+      tro_total                 as total,
+      tro_pay_type              as payType,
+      tro_thirdparty_order_code as thirdpartyOrderCode,
+      tro_is_relay              as isRelay,
+      tro_pay_time              as payTime,
+      tro_return_status         as returnStatus,
+      tro_order_type            as orderType,
+      tro_rate_id               as rateId,
+      tro_car_battery           as carBattery,
+      tro_create_date           as createDate,
+      tro_transaction_number    as transactionNumber,
+      tro_update_date           as updateDate,
+      tro_begin_km              as beginKm,
+      tro_end_km                as endKm,
+      tro_user_name             as userName,
+      tro_plate_number          as plateNumber,
+      tro_user_account          as userAccount,
+      tro_actual_money          as actualMoney,
+      tro_cc_name               as ccName,
+      tro_cc_id                 as ccId,
+      tro_has_share             as hasShare,
+      tro_prepay_period         as prepayPeriod,
+      tro_prepay_amount         as prepayAmount,
+      tro_adjustconf_id         as adjustconfId,
+      tro_energy_id             as energyId,
+      tro_city_code             as cityCode,
+      tro_consume_num           as consumeNum,
+      tro_consume_fee           as consumeFee,
+      tro_prepay_flag           as prepayFlag,
+      tro_prepay_type           as prepayType
+    </sql>
+    <!-- 查询条件 -->
+    <sql id="queryParam">
+
+    </sql>
+
+
+
+    <!--查询订单-->
+    <select id="testGetTravelOrderList" resultType="com.carfree.entity.TravelOrderEntity">
+        SELECT
+        <include refid="resultColumn"></include>
+        FROM
+        tbl_travelorder
+
+        LIMIT 0,10
+    </select>
+
+
+
+</mapper>
