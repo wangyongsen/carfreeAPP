@@ -18,7 +18,6 @@ public interface TravelOrderDao extends BaseDao {
     /**
      * 测试：获取多条订单数据
      *
-     * @param travelOrderEntity
      * @return
      */
     List<TravelOrderEntity> testGetTravelOrderList();

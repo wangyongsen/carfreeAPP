@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.carfree.dao.TravelOrderDao">
-    <!-- 开启本mapper的namespace下的二级缓存，要合ehcache整合，需要配置type为ehcache实现cache接口的类型 -->
-    <!--<cache type="org.mybatis.caches.ehcache.EhcacheCache" />-->
-    <!-- 与上面不同，可以输出日志 -->
-    <!--<cache type="org.mybatis.caches.ehcache.LoggingEhcache"/>-->
 
     <!-- 全部结果 -->
     <sql id="resultColumn">
@@ -62,18 +58,13 @@
 
     </sql>
 
-
-
     <!--查询订单-->
     <select id="testGetTravelOrderList" resultType="com.carfree.entity.TravelOrderEntity">
         SELECT
-        <include refid="resultColumn"></include>
+          <include refid="resultColumn"></include>
         FROM
-        tbl_travelorder
-
+          tbl_travelorder
         LIMIT 0,10
     </select>
-
-
 
 </mapper>
